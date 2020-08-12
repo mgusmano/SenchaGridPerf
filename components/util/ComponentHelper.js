@@ -89,7 +89,7 @@ function createIt(c, id, type, value, disabled) {
 
 export function createBufferViewExtJS(parent) {
   var container1 = document.createElement('div');
-  container1.style.border = "1px solid gray"
+  container1.style.border = "1px solid lightgray"
   container1.style.padding = "10px 10px 10px 10px"
   container1.style.background = "rgb(247,247,247)"
   container1.style.marginBottom = "20px"

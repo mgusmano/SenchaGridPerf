@@ -114,7 +114,7 @@ There 2 buttons below to run tests:
           items: [
             {
               xtype: 'textfield',
-               fieldLabel: 'Filter first name',
+              fieldLabel: 'Filter first name',
               labelWidth: 110,
               labelAlign: 'left',
               bind: {
