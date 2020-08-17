@@ -197,7 +197,7 @@ There 2 buttons below to run tests:
                 console.log(window.total/filternum10)
                 var avg = window.total/filternum10
                 var d = {
-                  "run":"Set",
+                  "run":"Average",
                   "milliseconds":avg,
                   "product":"","testname":"",
                   "tablename":"",

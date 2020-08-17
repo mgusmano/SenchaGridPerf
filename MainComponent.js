@@ -84,7 +84,7 @@ export default class MainComponent {
       var testname = event.detail.testname
       var milliseconds = event.detail.milliseconds.toString()
       var tablesize = window.tableSize
-      this.grid.getStore().add({product: product, testname: testname, milliseconds: milliseconds, tablesize: tablesize})
+      this.grid.getStore().add({product: product, testname: testname, milliseconds: milliseconds.toFixed(2), tablesize: tablesize})
       window.allTests.push(event.detail.testJSON)
     });
     for (var prop in event.detail.cmpObj) {this[prop] = event.detail.cmpObj[prop];}

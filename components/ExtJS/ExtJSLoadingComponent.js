@@ -11,14 +11,19 @@ class ExtJSLoadingComponent extends HTMLElement {
     this.testName = "buffered";
     this.name = "<b>Ext JS Initial Loading Time</b>"
     this.summary = `
-This test will display performance of the Ext JS Buffered Renderer and Buffered Store.
+    This test measures the time required to load the initial set of static data.
 <p>
 There 2 buttons below to run tests:
+<br/>
 <ul>
-<li>RUN TEST 1X
-<li>RUN REST 10X
+There are 2 buttons to execute the tests:
+<li><b>Run Test 1x</b>   - Single test run.
+<li><b>Run Test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
 </ul>
 <b>You can set different values for:</b>
+<br/><br/>pageSize: (Total rows considered to form a page. A large value can cause memory overload.)
+<br/><br/>leadingBufferZone: (Number of rows to fetch before current page.)
+<br/><br/>trailingBufferZone: (Number of rows to fetch after current page.)
 <p>
 `
     initialize(this);
@@ -112,20 +117,27 @@ There 2 buttons below to run tests:
 
           dockedItems: [
             {
+              xtype: 'container',
+              style: 'color: darkblue;fontSize: 18px;marginBottom: 5px;',
+              html: 'Generated Table:'
+            },
+            {
             xtype: 'toolbar',
               docked: 'top',
               items: [
                 {
                   xtype: 'button',
-                  text: 'Run Test 1X',
+                  text: 'Run the Test 1x',
+                  style: "text-transform:lowercase;width:175px;height:35px;font-size:14px;background:lightgray;",
                   handler: 'doLoading',
 
                 },
+                {xtype: 'tbspacer'},
                 {
                   xtype: 'button',
-                  text: 'Run Test 10X',
+                  text: 'Run The Test 10x',
+                  style: "width:175px;height:35px;font-size:14px;background:lightgray;",
                   handler: 'doFilter10X',
-
                 }
                 // {
                 //   xtype: 'button',
@@ -176,17 +188,17 @@ There 2 buttons below to run tests:
                     callFilter10x()
                   }
                   else {
-                    console.log('done')
-                    console.log(filternum10)
-                    console.log(window.total)
-                    console.log(window.total/filternum10)
+                    //console.log('done')
+                    //console.log(filternum10)
+                    //console.log(window.total)
+                    //console.log(window.total/filternum10)
                     var avg = window.total/filternum10
                     var d = {
                       "run":"Set",
                       "milliseconds":avg,
                       "product":"","testname":"",
                       "tablename":"",
-                      "iconCls":"x-fa fa-folder",
+                      "xiconCls":"x-fa fa-folder",
                       "leaf": "false",
                       "children": window.children
                     }
@@ -270,7 +282,7 @@ There 2 buttons below to run tests:
     Ext.undefine(`${this.testName}-grid`);
 
     try {
-      document.getElementById("pageSize").value = 20;
+      document.getElementById("pageSize").value = 100;
       document.getElementById("leadingBufferZone").value = 0;
       document.getElementById("trailingBufferZone").value = 0;
     }

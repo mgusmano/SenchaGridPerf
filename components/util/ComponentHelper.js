@@ -32,7 +32,7 @@ export function initialize(me) {
 function createLabel(text) {
   var filterRowLabel = document.createElement('label');
   filterRowLabel.innerHTML = text + ':&nbsp;'
-  filterRowLabel.setAttribute('style', 'width: 150px;margin: 5px;font-size: 18px;font-weight: bold;padding-top: 5px;color: rgb(74,102,119);');
+  filterRowLabel.setAttribute('style', 'width: 150px;margin: 5px;font-size: 14px;font-weight: bold;padding-top: 5px;color: rgb(74,102,119);');
   return filterRowLabel
 }
 
@@ -68,7 +68,7 @@ export function createBufferViewExtJS2(parent) {
   container1.style.display = "flex"
   container1.style.flexDirection = "row"
 
-  createIt(container1, 'pageSize', 'number', 20, false);
+  createIt(container1, 'pageSize', 'number', 100, false);
   createIt(container1, 'leadingBufferZone', 'number', 0, false);
   createIt(container1, 'trailingBufferZone', 'number', 0, false);
 
@@ -102,7 +102,7 @@ export function createBufferViewExtJS(parent) {
   container2.style.background = "rgb(233,233,233)"
   container2.style.flexDirection = "row"
   container1.append(container2);
-  createIt(container2, 'pageSize', 'number', 20, false);
+  createIt(container2, 'pageSize', 'number', 100, false);
 
   var container3 = document.createElement('div');
   container3.style.display = "flex"
@@ -278,7 +278,7 @@ export function sendIt(product, testname, testJSON, milliseconds) {
   window.total = window.total + milliseconds
 
   window.children.push(
-    {"run":"Run","milliseconds":milliseconds,"product":"ExtJS","testname":testname,"tablename":window.tableName,"leaf":"true"}
+    {"run":"","milliseconds":milliseconds.toFixed(2),"product":"ExtJS","testname":testname,"tablename":window.tableName,"leaf":"true"}
   )
 
   var test = JSON.stringify(testJSON)
