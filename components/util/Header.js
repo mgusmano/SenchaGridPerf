@@ -1,6 +1,5 @@
 class HeaderComponent extends HTMLElement {
   connectedCallback() {
-    //var background = this.getAttribute('background')
     var background = "lightgray"
     var buttonstate = this.getAttribute('buttonstate')
     //var formstate = this.getAttribute('formstate')
