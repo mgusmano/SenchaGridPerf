@@ -24,7 +24,6 @@ export default class MainComponent {
 
     const urlParams = new URLSearchParams(window.location.search);
     const theFrame = urlParams.get('frame');
-    console.log(theFrame)
 
     if (theFrame == 'true') {
       console.log(event.detail.cmpObj['leftpanel'])
@@ -36,7 +35,7 @@ export default class MainComponent {
 
     document.querySelector('button[clear]').addEventListener('click', (event) => {
       this.grid.getStore().removeAll();
-      //me.grid.getStore().sync();
+      this.treepanel.getStore().removeAll();
     });
 
     document.querySelector('button[export]').addEventListener('click', (event) => {
@@ -45,32 +44,22 @@ export default class MainComponent {
         fileName: 'GridPerfExport.csv',
         type: 'csv'
       }
-      this.grid.saveDocumentAs(cfg);
+      window.grid.saveDocumentAs(cfg);
       //Ext.getCmp('g2').saveDocumentAs(cfg);
     });
 
-    document.querySelector('button[test]').addEventListener('click', (event) => {
-      console.log('test')
-      console.log(window.treepanel.getStore().getData())
-
-      // var d = {"run":"Set3","milliseconds":400,"product":"","testname":"","tablename":"","iconCls":"x-fa fa-folder","leaf": "false",
-      //   "children": [
-      //     {"run":"Run01","milliseconds":400,"product":"","testname":"","tablename":"","iconCls":"x-fa fa-folder","leaf":"true"},
-      //     {"run":"Run02","milliseconds":400,"product":"","testname":"","tablename":"","iconCls":"x-fa fa-folder","leaf":"true"},
-      //     {"run":"Run10","milliseconds":400,"product":"","testname":"","tablename":"","iconCls":"x-fa fa-folder","leaf":"true"}
-      //   ]
-      // }
-      var d = {"run":"Set3","milliseconds":400,"product":"p","testname":"t","tablename":"t","iconCls":"x-fa fa-folder","leaf": "false",
-      "children": [
-        {"run":"Run01","milliseconds":400,"leaf":"true"},
-        {"run":"Run02","milliseconds":400,"leaf":"true"},
-        {"run":"Run10","milliseconds":400,"leaf":"true"}
-      ]
-    }
-      window.treepanel.getStore().add(d)
-
-
-    });
+    // document.querySelector('button[test]').addEventListener('click', (event) => {
+    //   console.log('test')
+    //   console.log(window.treepanel.getStore().getData())
+    //   var d = {"run":"Set3","milliseconds":400,"product":"p","testname":"t","tablename":"t","iconCls":"x-fa fa-folder","leaf": "false",
+    //   "children": [
+    //     {"run":"Run01","milliseconds":400,"leaf":"true"},
+    //     {"run":"Run02","milliseconds":400,"leaf":"true"},
+    //     {"run":"Run10","milliseconds":400,"leaf":"true"}
+    //   ]
+    // }
+    //   window.treepanel.getStore().add(d)
+    // });
 
     // document.querySelector('select[tableSize]').addEventListener('change', (event) => {
     //   window.tableName = event.target.value;
@@ -82,9 +71,9 @@ export default class MainComponent {
       var product = event.detail.product
       //var test = event.detail.test
       var testname = event.detail.testname
-      var milliseconds = event.detail.milliseconds.toString()
+      var milliseconds = event.detail.milliseconds.toFixed(2).toString()
       var tablesize = window.tableSize
-      this.grid.getStore().add({product: product, testname: testname, milliseconds: milliseconds.toFixed(2), tablesize: tablesize})
+      this.grid.getStore().add({product: product, testname: testname, milliseconds: milliseconds, tablesize: tablesize})
       window.allTests.push(event.detail.testJSON)
     });
     for (var prop in event.detail.cmpObj) {this[prop] = event.detail.cmpObj[prop];}
@@ -108,7 +97,6 @@ export default class MainComponent {
       while (myNode.firstChild) {
         myNode.removeChild(myNode.lastChild);
       }
-      console.log(path)
       var node = document.createElement('z-' + path);
       myNode.appendChild(node);
       window.location.hash = '#' + path;

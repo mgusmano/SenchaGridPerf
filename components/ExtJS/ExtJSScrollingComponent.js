@@ -15,21 +15,32 @@ class ExtJSScrollingComponent extends HTMLElement {
     window.total = 0
     window.average = 0
     window.children = []
+    window.currentComponent = this
     this.formstate = "hide";
-    this.product = "extjsclassic";
+    this.product = "ExtJS";
     this.testName = "scroll";
     this.name = "<b>Ext JS Buffered Grid Scrolling Test</b>";
     this.summary = `
-This test will display performance of the Scrolling down & up in ExtJS Grid.
+This test measures the time required to scroll through various portions of the grid.
+By setting the values for “Page Down” and “Page Up” fields, users can mimic a real world grid scrolling scenario.
+For example: To scroll to mid grid and back up a few entries (one page), the following parameters will be set.
+Grid size = 1,000,000
+pageSize = 100
+Page Down = 5000
+Page Up = 4999
 <p>
 There 3 buttons below to run tests:
+<br/>
 <ul>
-<li>RUN TEST 1X
-<li>RUN TEST 10X
-<li>SCROLL TO END
+<li><b>run the test 1x</b>   - Single test run.
+<li><b>run the test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
+<li><b>scroll to end</b> - Scroll to the end of the data.
 </ul>
-<p>
 <b>You can set different values for:</b>
+<br/><br/>pageSize: (Total rows considered to form a page. A large value can cause memory overload.)
+<br/><br/>leadingBufferZone: (Number of rows to fetch before current page.)
+<br/><br/>trailingBufferZone: (Number of rows to fetch after current page.)
+<p>
 `
     initialize(this);
     document.getElementById("name").innerHTML = this.name;
@@ -176,7 +187,8 @@ There 3 buttons below to run tests:
             // },
             {
               xtype: 'button',
-              text: 'Run Test 1X',
+              text: 'Run Test 1x',
+              style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
               handler: 'onStartTestBtnClick',
               bind: {
                 hidden: '{hiddenFlag}'
@@ -184,8 +196,9 @@ There 3 buttons below to run tests:
             },
             {
               xtype: 'button',
-              text: 'Run Test 10X',
-              handler: 'on10X',
+              text: 'Run Test 10x',
+              style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
+              handler: 'doFilter10X',
               bind: {
                 hidden: '{hiddenFlag}'
               }
@@ -193,6 +206,7 @@ There 3 buttons below to run tests:
             {
               xtype: 'button',
               text: 'Scroll to End',
+              style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
               handler: 'onScrollToEndBtnClick'
             }
             // {
@@ -201,7 +215,12 @@ There 3 buttons below to run tests:
             //   handler: 'clearFilter'
             // }
           ]
-        }
+        },
+        {
+          xtype: 'container',
+          style: 'color: rgb(13,66,87);fontSize: 18px;margin: 10px 5px 10px 5px;',
+          html: 'Generated Table:'
+        },
 
       ],
       viewModel: {
@@ -339,7 +358,8 @@ There 3 buttons below to run tests:
           }
         },
 
-        on10X: function () {
+        doFilter10X: function (me) {
+          console.log(me)
           var scrollnum10 = 0
           function callScroll10x() {
             setTimeout(function(){
@@ -349,17 +369,13 @@ There 3 buttons below to run tests:
                 callScroll10x()
               }
               else {
-                console.log('done')
-                console.log(scrollnum10)
-                console.log(window.total)
-                console.log(window.total/scrollnum10)
                 var avg = window.total/scrollnum10
                 var d = {
-                  "run":"Set",
-                  "milliseconds":avg,
-                  "product":"","testname":"",
+                  "run":"Average<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test result",
+                  "milliseconds":avg.toFixed(2),
+                  "product":window.currentComponent.product,"testname":window.currentComponent.testName,
                   "tablename":"",
-                  "iconCls":"x-fa fa-folder",
+                  "xiconCls":"x-fa fa-folder",
                   "leaf": "false",
                   "children": window.children
                 }

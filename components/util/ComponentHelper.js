@@ -278,7 +278,7 @@ export function sendIt(product, testname, testJSON, milliseconds) {
   window.total = window.total + milliseconds
 
   window.children.push(
-    {"run":"","milliseconds":milliseconds.toFixed(2),"product":"ExtJS","testname":testname,"tablename":window.tableName,"leaf":"true"}
+    {"run":" ","milliseconds":milliseconds.toFixed(2),"product":"ExtJS","testname":testname,"tablename":window.tableName,"leaf":"true"}
   )
 
   var test = JSON.stringify(testJSON)

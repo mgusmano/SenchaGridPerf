@@ -66,12 +66,13 @@
       <div class="top">
         <div class="name" name></div>
         <div class="start">
+
           <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-file-export ${buttonstate}" export>&nbsp;export</button>
           <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-trash-alt ${buttonstate}" clear>&nbsp;clear</button>
           &nbsp;&nbsp;
-
+<!--
           <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-trash-alt ${buttonstate}" test>&nbsp;</button>
-
+          -->
         </div>
       </div>
 
@@ -82,14 +83,14 @@
 
 
     <ext-grid
-    style = '{"flex": "1","padding": "0 0 0 0","color": "white","background": "gray",box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}'
-    flex = 1
-    margin="10px 10px 10px 10px"
+      style = '{"flex": "1","padding": "0 0 0 0","color": "white","background": "gray",box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}'
+      flex = 1
+      margin="10px 10px 10px 10px"
       id = 'g2'
       extname = 'grid'
       plugins = '{
         "gridexporter": true
-      }',
+      }'
       columns='[
         {"text": "product", "dataIndex": "product"},
         {"text": "testname", "dataIndex": "testname"},
@@ -102,11 +103,15 @@
     <ext-treepanel
     flex = 1
     extname="treepanel"
+    id="treepanel"
+    plugins = '{
+      "gridexporter": true
+    }'
     xtitle= 'Example Tree Grid'
     xwidth= 600
     xheight= "670px"
     reserveScrollbar= true
-    useArrows= true
+    useArrows= false
     rootVisible= false
     multiSelect= true
     singleExpand= true
