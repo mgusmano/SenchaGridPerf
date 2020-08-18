@@ -64,7 +64,6 @@ export default class MainComponent {
     this.treelist.setSelection(node);
   }
 
-  //navTreelistSelectionChange = (event) => {
   navTreelistSelectionChange(event) {
     var node = event.detail.record;
     this.navigate('tree', node);
