@@ -12,7 +12,7 @@ class ExtJSLoadingComponent extends HTMLElement {
     this.name = "<b>Ext JS Initial Loading Time</b>"
     this.summary = `
 <div style="font-size:14px;">
-This test measures the time required to load the initial set of static data.
+<b>This test measures the time required to load the initial set of static data.</b>
 <p>
 There 2 buttons below to run tests:
 <br/>

@@ -13,7 +13,7 @@ class ExtJSFilteringComponent extends HTMLElement {
     this.name = "<b>Ext JS Filtering Speed Test</b>";
     this.summary = `
 <div style="font-size:14px;">
-This test measures the time required to dynamically filter on a field (e.g: characters in a name)
+<b>This test measures the time required to dynamically filter on a field (e.g: characters in a name)</b>
 <p>
 There 2 buttons below to run tests:
 <br/>

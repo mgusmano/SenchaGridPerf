@@ -22,7 +22,7 @@ class ExtJSScrollingComponent extends HTMLElement {
     this.name = "<b>Ext JS Buffered Grid Scrolling Test</b>";
     this.summary = `
 <div style="font-size:14px;">
-This test measures the time required to scroll through various portions of the grid.
+<b>This test measures the time required to scroll through various portions of the grid.</b>
 <br/><br/>
 By setting the values for “Page Down” and “Page Up” fields, users can mimic a real world grid scrolling scenario.
 <br/><br/>
