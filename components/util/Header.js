@@ -88,7 +88,7 @@ class HeaderComponent extends HTMLElement {
         -->
       </div>
 
-      <div style="height:100%;background:white;margin:10px 10px 10px 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <div style="overflow:auto;height:100%;background:white;margin:10px 10px 10px 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div style="padding:10px 10px 0 10px;color:black;font-size:18px;">
           <div style="color:rgb(13,66,87)" id="summary"></div>
         </div>

@@ -3,7 +3,7 @@
 }
 
 .x-btn-inner {
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .x-btn-inner-default-toolbar-small {

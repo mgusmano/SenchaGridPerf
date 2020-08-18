@@ -21,25 +21,32 @@ class ExtJSScrollingComponent extends HTMLElement {
     this.testName = "scroll";
     this.name = "<b>Ext JS Buffered Grid Scrolling Test</b>";
     this.summary = `
+<div style="font-size:14px;">
 This test measures the time required to scroll through various portions of the grid.
+<br/><br/>
 By setting the values for “Page Down” and “Page Up” fields, users can mimic a real world grid scrolling scenario.
+<br/><br/>
 For example: To scroll to mid grid and back up a few entries (one page), the following parameters will be set.
-Grid size = 1,000,000
-pageSize = 100
-Page Down = 5000
-Page Up = 4999
+<ul>
+<li>Grid size = 1,000,000
+<li>pageSize = 100
+<li>Page Down = 5000
+<li>Page Up = 4999
+</ul>
 <p>
 There 3 buttons below to run tests:
 <br/>
 <ul>
-<li><b>run the test 1x</b>   - Single test run.
-<li><b>run the test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
-<li><b>scroll to end</b> - Scroll to the end of the data.
+<li><b>Run Test 1x</b>   - Single test run.
+<li><b>Run Test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
+<li><b>Scroll To End</b> - Scroll to the end of the data.
 </ul>
+</div>
+<div style="font-size:14px;">
 <b>You can set different values for:</b>
-<br/><br/>pageSize: (Total rows considered to form a page. A large value can cause memory overload.)
-<br/><br/>leadingBufferZone: (Number of rows to fetch before current page.)
-<br/><br/>trailingBufferZone: (Number of rows to fetch after current page.)
+<br/><br/>pageSize: Total rows that form a page.
+<br/><br/>leadingBufferZone: Number of rows to fetch before current page.
+<br/><br/>trailingBufferZone: Number of rows to fetch after current page.
 <p>
 `
     initialize(this);

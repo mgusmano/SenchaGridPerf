@@ -78,6 +78,7 @@ export default class MainComponent {
         myNode.removeChild(myNode.lastChild);
       }
       var node = document.createElement('z-' + path);
+      node.style.overflow = "auto"
       myNode.appendChild(node);
       window.location.hash = '#' + path;
     }

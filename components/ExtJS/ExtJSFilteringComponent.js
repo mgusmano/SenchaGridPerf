@@ -12,18 +12,21 @@ class ExtJSFilteringComponent extends HTMLElement {
     this.testName = "server filter";
     this.name = "<b>Ext JS Filtering Speed Test</b>";
     this.summary = `
+<div style="font-size:14px;">
 This test measures the time required to dynamically filter on a field (e.g: characters in a name)
 <p>
 There 2 buttons below to run tests:
 <br/>
 <ul>
-<li><b>run the test 1x</b>   - Single test run.
-<li><b>run the test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
+<li><b>Run Test 1x</b>   - Single test run.
+<li><b>Run Test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
 </ul>
+</div>
+<div style="font-size:14px;">
 <b>You can set different values for:</b>
-<br/><br/>pageSize: (Total rows considered to form a page. A large value can cause memory overload.)
-<br/><br/>leadingBufferZone: (Number of rows to fetch before current page.)
-<br/><br/>trailingBufferZone: (Number of rows to fetch after current page.)
+<br/><br/>pageSize: Total rows that form a page.
+<br/><br/>leadingBufferZone: Number of rows to fetch before current page.
+<br/><br/>trailingBufferZone: Number of rows to fetch after current page.
 <p>
 `
     initialize(this);

@@ -8,21 +8,25 @@ class ExtJSLoadingComponent extends HTMLElement {
     window.children = []
     this.formstate = "hide";
     this.product = "ExtJS";
-    this.testName = "buffered";
+    this.testName = "load time";
     this.name = "<b>Ext JS Initial Loading Time</b>"
     this.summary = `
+<div style="font-size:14px;">
 This test measures the time required to load the initial set of static data.
 <p>
 There 2 buttons below to run tests:
 <br/>
 <ul>
-<li><b>run the test 1x</b>   - Single test run.
-<li><b>run the test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
+<li><b>Run Test 1x</b>   - Single test run.
+<li><b>Run Test 10x</b> - Run the test 10 times. Display individual and average results.
 </ul>
+</div>
+<div style="font-size:14px;">
 <b>You can set different values for:</b>
-<br/><br/>pageSize: (Total rows considered to form a page. A large value can cause memory overload.)
-<br/><br/>leadingBufferZone: (Number of rows to fetch before current page.)
-<br/><br/>trailingBufferZone: (Number of rows to fetch after current page.)
+<br/><br/>pageSize: Total rows that form a page.
+<br/><br/>leadingBufferZone: Number of rows to fetch before current page.
+<br/><br/>trailingBufferZone: Number of rows to fetch after current page.
+</div>
 <p>
 `
     initialize(this);
@@ -122,7 +126,7 @@ There 2 buttons below to run tests:
               items: [
                 {
                   xtype: 'button',
-                  text: 'Run the Test 1x',
+                  text: 'Run Test 1x',
                   style: "text-transform:lowercase;width:175px;height:35px;font-size:14px;background:#2196f3;",
                   handler: 'doLoading',
 
@@ -130,7 +134,7 @@ There 2 buttons below to run tests:
                 {xtype: 'tbspacer'},
                 {
                   xtype: 'button',
-                  text: 'Run The Test 10x',
+                  text: 'Run Test 10x',
                   style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
                   handler: 'doFilter10X',
                 }

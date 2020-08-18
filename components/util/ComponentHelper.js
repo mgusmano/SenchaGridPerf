@@ -31,6 +31,7 @@ export function initialize(me) {
 
 function createLabel(text) {
   var filterRowLabel = document.createElement('label');
+  //filterRowLabel.style.fontSize = "12px"
   filterRowLabel.innerHTML = text + ':&nbsp;'
   filterRowLabel.setAttribute('style', 'width: 150px;margin: 5px;font-size: 14px;font-weight: bold;padding-top: 5px;color: rgb(74,102,119);');
   return filterRowLabel
@@ -45,7 +46,7 @@ function createInput(id, type, value, disabled) {
   filterRowInput.setAttribute('min', 1);
   filterRowInput.setAttribute('max', 1000);
   filterRowInput.setAttribute('value', value);
-  filterRowInput.setAttribute('style', 'width: 150px;margin: 5px;color: rgb(74,102,119);text-align: right;');
+  filterRowInput.setAttribute('style', 'font-size:16px;width: 150px;margin: 5px;color: rgb(74,102,119);text-align: right;');
   return filterRowInput
 }
 
