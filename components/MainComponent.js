@@ -25,10 +25,10 @@ export default class MainComponent {
     const urlParams = new URLSearchParams(window.location.search);
     const theFrame = urlParams.get('frame');
 
-    if (theFrame == 'true') {
-      console.log(event.detail.cmpObj['leftpanel'])
-      event.detail.cmpObj['leftpanel'].setHidden(true)
-    }
+    // if (theFrame == 'true') {
+    //   console.log(event.detail.cmpObj['leftpanel'])
+    //   event.detail.cmpObj['leftpanel'].setHidden(true)
+    // }
 
     window.treepanel = event.detail.cmpObj['treepanel']
     window.grid = event.detail.cmpObj['grid']
