@@ -1,0 +1,129 @@
+<ext-panel viewport="true" layout="fit" bodyStyle='{"border":"0px solid red"}' onready="main.viewportReady">
+
+  <ext-container dock="top" layout="hbox" height="100" style='{"border":"0px solid white","color": "white","background": "#094158"}'>
+    <ext-container style='{"font-style": "none", "color": "gray", "font-size": "34px","font-weight": "700","margin": "37px 10px 10px 0","background": "#094158"}' html="Grid Performance Analyzer"></ext-container>
+    <ext-image alt='logo' src='assets/sencha.png' height='100' width='200'></ext-image>
+  </ext-container>
+
+  <ext-container dock="top" layout="hbox" height="50" style='{"border":"0px solid white","color": "blue","background": "white"}'>
+  <div style="font-size:18px;padding:15px 10px 10px 10px;color:rgb(13,66,87)"><b>Welcome!</b> This is the Sencha Grid Performance Analyzer</div>
+  </ext-container>
+
+  <ext-panel
+    extname="leftpanel"
+    header="false"
+    hidden="false"
+    dock="left"
+    layout="fit"
+    border="false"
+    scrollable="y"
+    resizable='{"edges": "east", "dynamic": "true"}'
+    width="400"
+  >
+    <ext-container dock="top" height="50" layout="fit" style='{"display":"flex","padding": "0 0 0 0","color": "white","background": "#094158"}'>
+      <div style="flex:1;display:flex;justify-content:flex-end;">
+        <div style="flex:1;"></div>
+        <!-- <select tableSizex style="flex:1;color:black;background:lightgray;font-size:18px;margin: 10px 10px 1px 1px;height:35px;padding: 5px 7px;">
+          <option value="mega_5000">Table size: 5000</option>
+          <option value="mega_10000">Table size: 10,000</option>
+          <option value="mega_100000">Table size: 100,000</option>
+          <option selected value="mega_1000000">Table size: 1,000,000</option>
+        </select> -->
+      </div>
+    </ext-container>
+    <ext-treelist
+      nav
+      extname="treelist"
+      onselectionchange="main.navTreelistSelectionChange"
+      ui="nav"
+      expanderFirst="false"
+      expanderOnly="false"
+    >
+    </ext-treelist>
+  </ext-panel>
+
+  <div id="router" style="border:0px;width:100%;height:100%;background:white;"></div>
+
+  <ext-panel
+    dock="right"
+    bodyStyle='{"background": "lightgray;xdisplay:"flex"}'
+    layout='{"type":"vbox","align":"stretch"}'
+    xtitle="Results"
+    xcls="contextpanel"
+    weight="10"
+    xbodyPadding="0"
+    xextname="context"
+    xbodyPadding="10px"
+    border="false"
+    shadow="true"
+    scrollable="y"
+    resizable='{"edges": "east", "dynamic": "true"}'
+    width="450"
+    collapsed="false"
+  >
+    <ext-container dock="top" height="50" style='{"padding": "0 0 0 10px","color": "white","background": "#094158"}'>
+      <div class="top">
+        <div class="name" name></div>
+        <div class="start">
+          <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-file-export ${buttonstate}" export>&nbsp;export</button>
+          <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-trash-alt ${buttonstate}" clear>&nbsp;clear</button>
+        </div>
+      </div>
+    </ext-container>
+
+    <ext-grid
+      style = '{"flex": "1","padding": "0 0 0 0","color": "white","background": "gray",box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}'
+      flex = 1
+      margin="10px 10px 10px 10px"
+      id = 'g2'
+      extname = 'grid'
+      plugins = '{
+        "gridexporter": true
+      }'
+      columns='[
+        {"text": "product", "dataIndex": "product"},
+        {"text": "testname", "dataIndex": "testname"},
+        {"text": "tablesize", "dataIndex": "tablesize"},
+        {"text": "milliseconds", "dataIndex": "milliseconds", "flex": "1"}
+      ]'
+      grid store='{}' extname="grid" flex: "1">
+    </ext-grid>
+
+    <ext-treepanel
+      flex = 1
+      extname="treepanel"
+      id="treepanel"
+      plugins = '{
+        "gridexporter": true
+      }'
+      xtitle= 'Example Tree Grid'
+      xwidth= 600
+      xheight= "670px"
+      reserveScrollbar= true
+      useArrows= false
+      rootVisible= false
+      multiSelect= true
+      singleExpand= true
+      rowViewModel= true
+      style='{"padding": "0 0 0 0","color": "white","background": "gray",box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}'
+      margin="10px 10px 10px 10px"
+      columns='[
+        {"xtype": "treecolumn","text": "Run","dataIndex": "run","width": 120},
+        {"text": "milliseconds","dataIndex": "milliseconds"},
+        {"text": "product","dataIndex": "product"},
+        {"text": "testname","dataIndex": "testname"},
+        {"text": "tablesize","dataIndex": "tablename"}
+      ]'
+      store='{
+        "type":"tree",
+        "folderSort": "true",
+        "data": {
+          "text": ".",
+          "children": [
+          ]
+        }
+      }'
+      >
+    </ext-treepanel>
+  </ext-panel>
+</ext-panel>
