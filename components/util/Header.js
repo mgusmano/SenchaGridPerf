@@ -73,10 +73,10 @@ class HeaderComponent extends HTMLElement {
       <div class="top" style="height:50px;display:flex;justify-content:space-between;">
       <div style="color:white;margin: 10px 10px 1px 1px;" id="name"></div>
         <select tableSize style="color:white;background:#2196f3;font-size:14px;xmargin: 10px 10px 1px 1px;height:33px;xpadding: 5px 5px;">
-          <option value="mega_5000">Table size: 5000</option>
-          <option value="mega_10000">Table size: 10,000</option>
-          <option value="mega_100000">Table size: 100,000</option>
-          <option selected value="mega_1000000">Table size: 1,000,000</option>
+          <option value="mega_5000">Grid size: 5000</option>
+          <option value="mega_10000">Grid size: 10,000</option>
+          <option value="mega_100000">Grid size: 100,000</option>
+          <option selected value="mega_1000000">Grid size: 1,000,000</option>
         </select>
         <!--
         <div style="display:flex;flex-direction:row;">

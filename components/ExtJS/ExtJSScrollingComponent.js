@@ -37,8 +37,8 @@ For example: To scroll to mid grid and back up a few entries (one page), the fol
 There 3 buttons below to run tests:
 <br/>
 <ul>
-<li><b>Run Test 1x</b>   - Single test run.
-<li><b>Run Test 10x</b> - Run the test consecutively 10 times. Display individual and average test results.
+<li><b>Run Test 1x</b> - Single test run.
+<li><b>Run Test 10x</b> - Run the test 10 times. Display individual and average results.
 <li><b>Scroll To End</b> - Scroll to the end of the data.
 </ul>
 </div>

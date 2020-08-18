@@ -17,7 +17,7 @@ class ExtJSLoadingComponent extends HTMLElement {
 There 2 buttons below to run tests:
 <br/>
 <ul>
-<li><b>Run Test 1x</b>   - Single test run.
+<li><b>Run Test 1x</b> - Single test run.
 <li><b>Run Test 10x</b> - Run the test 10 times. Display individual and average results.
 </ul>
 </div>
