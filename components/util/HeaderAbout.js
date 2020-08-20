@@ -69,18 +69,19 @@ class HeaderAboutComponent extends HTMLElement {
     }
     </style>
 
-    <div class="root" style="border-left:0px solid gray;border-right:0px solid gray;background:${background};color:blue;width:100%;height:100%;">
+    <div class="root" style="font-size:14px;border-left:0px solid gray;border-right:0px solid gray;background:${background};color:blue;width:100%;height:100%;">
       <div class="top" style="height:50px;display:flex;justify-content:space-between;">
       <div style="color:white;margin: 10px 10px 1px 1px;" id="name">About</div>
       </div>
       <div style="overflow:auto;height:100%;background:white;margin:10px 10px 10px 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div style="padding:10px 10px 0 10px;color:black;font-size:18px;">
-          <div style="color:rgb(13,66,87)" id="summary">Welcome to the Ext JS Grid Performance Analyzer!</div>
+          <div style="color:rgb(13,66,87)" id="summary"><b>Welcome to the Ext JS Grid Performance Analyzer</b></div>
         </div>
         <div parent style="padding:0 10px 10px 10px;width:100%;height:500px;color:rgb(9, 65, 88);font-size:18px;" class="ag-theme-balham">
 
 
 <p>
+<div style="font-size:14px;">
         This User Interface enables you to evaluate the Ext JS Grid performance on various benchmarking metrics.
         <ul>
         <li>Step 1:  Choose the desired test located on the left nav bar.
@@ -89,7 +90,7 @@ class HeaderAboutComponent extends HTMLElement {
             <li>Step 4:  Execute the desired test (single run or multiple runs) and observe the results on the top right screen.
         </ul>
         You can also export the results to a file by clicking on the "export" button or "clear" the results and re-run.
-
+</div>
 
 
         </div>
