@@ -27,23 +27,10 @@ function init() {
 }
 
 Ext.onReady(function() {
-  var modal = document.getElementById("myModal");
-  var span = document.getElementsByClassName("close")[0];
-
-  span.onclick = function() {
-    modal.style.display = "none";
-    init();
-  }
-
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-      init();
-    }
-  }
-
-  modal.style.display = "block";
 
 
+  init();
+
+  //modal.style.display = "block";
 
 });

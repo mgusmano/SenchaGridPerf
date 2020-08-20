@@ -62,6 +62,48 @@ export default class MainComponent {
     if (hash == '') { hash = 'all'; }
     var node = this.treelist.getStore().findNode('path', '/' + hash);
     this.treelist.setSelection(node);
+
+
+
+
+
+    var content = `
+    <span id="thespan" class="close">&times;</span>
+    <h1>Welcome to the Ext JS Grid Performance Analyzer!</h1>
+    This User Interface enables you to evaluate the Ext JS Grid performance on various benchmarking metrics.
+    <ul>
+    <li>Step 1:  Choose the desired test located on the left nav bar.
+    <li>Step 2:  Select the Grid Size from the drop down menu to run the benchmark evaluation (options range from 5,000 to 1 million entries)
+      <li>Step 3:  You can tune different parameters such as pageSize, leading/trailing Buffers, number of test runs etc.
+        <li>Step 4:  Execute the desired test (single run or multiple runs) and observe the results on the top right screen.
+    </ul>
+    You can also export the results to a file by clicking on the "export" button or "clear" the results and re-run.
+    `
+
+    var d = document.createElement('div');
+    d.classList.add("modal");
+    d.setAttribute('id','myModal')
+
+    var c = document.createElement('div');
+    c.classList.add("modal-content");
+    c.innerHTML = content
+
+    d.appendChild(c)
+    document.body.appendChild(d)
+
+    var modal = document.getElementById("myModal")
+    modal.style.display = "block"
+
+    document.getElementById('thespan').onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
   }
 
   navTreelistSelectionChange(event) {
