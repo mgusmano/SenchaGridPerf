@@ -15,6 +15,8 @@ class ExtJSFilteringComponent extends HTMLElement {
 <div style="font-size:14px;">
 <b>This test measures the time required to dynamically filter on a field (e.g: characters in a name)</b>
 <p>
+Enter the characters to filter in the "Filter first name" field below.
+<br/><br/>
 There 2 buttons below to run tests:
 <br/>
 <ul>
