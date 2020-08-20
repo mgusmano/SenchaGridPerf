@@ -9,8 +9,7 @@ import "./ext-web-components-classic/src/ext-treepanel.component.js"
 import "./ext-web-components-classic/src/ext-tbspacer.component.js"
 import "./ext-web-components-classic/src/ext-combobox.component.js"
 
-
-import './components/ExtJS/ExtJSAboutComponent.js';
+import './components/ExtJS/ExtJSPerfBenchmarkComponent.js';
 import './components/ExtJS/ExtJSLoadingComponent.js';
 import './components/ExtJS/ExtJSFilteringComponent.js';
 import './components/ExtJS/ExtJSScrollingComponent.js';

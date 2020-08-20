@@ -1,7 +1,7 @@
 import { initializeAbout, startTimer, endTimer, sendIt, createBufferViewExtJS } from '../util/ComponentHelper.js'
 import { baseURL } from '../util/config.js';
 
-class ExtJSAboutComponent extends HTMLElement {
+class ExtJSPerfBenchmarkComponent extends HTMLElement {
 
   // constructor() {
 
@@ -33,4 +33,4 @@ class ExtJSAboutComponent extends HTMLElement {
   }
 }
 
-customElements.define("z-extjs-about", ExtJSAboutComponent);
+customElements.define("z-extjs-perf-benchmark", ExtJSPerfBenchmarkComponent);
