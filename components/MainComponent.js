@@ -69,7 +69,8 @@ export default class MainComponent {
 
     var content = `
     <span id="thespan" class="close">&times;</span>
-    <h1>Welcome to the Ext JS Grid Performance Analyzer!</h1>
+    <div style="line-height: 1.2;display:inline-block;font-size:24px;margin-bottom:10px;"><b>Welcome to the Ext JS Grid Performance Analyzer!</b></div>
+<br/>
     This User Interface enables you to evaluate the Ext JS Grid performance on various benchmarking metrics.
     <ul>
       <li>Step 1:  Choose the desired test located on the left nav bar.
