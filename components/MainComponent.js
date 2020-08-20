@@ -33,6 +33,12 @@ export default class MainComponent {
     window.treepanel = event.detail.cmpObj['treepanel']
     window.grid = event.detail.cmpObj['grid']
 
+    document.querySelector('button[help]').addEventListener('click', (event) => {
+      var modal = document.getElementById("myModal")
+      modal.style.display = "block"
+    });
+
+
     document.querySelector('button[clear]').addEventListener('click', (event) => {
       this.grid.getStore().removeAll();
       this.treepanel.getStore().removeAll();
