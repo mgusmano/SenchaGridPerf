@@ -1,4 +1,5 @@
 import './Header.js'
+import './HeaderAbout.js'
 
 export function initialize(me) {
   me.gridToTest = null
@@ -12,6 +13,35 @@ export function initialize(me) {
   color="black";
   //me.innerHTML = `<z-header color="${color}" background="${background}" formstate="${me.formstate}" buttonstate="${buttonstate}"></z-header>`;
   me.innerHTML = `<z-header color="${color}" background="${background}" buttonstate="${buttonstate}"></z-header>`;
+  me.parent = me.querySelector("div[parent]")
+  me.starttime = null
+  me.endtime = null
+  me.cleartest=me.querySelector("button[cleartest]")
+  me.starttest=me.querySelector("button[starttest]")
+  me.run5x=me.querySelector("button[run5x]")
+  me.run10x=me.querySelector("button[run10x]")
+
+  me.pageSize=me.querySelector("input[pageSize]")
+  me.leadingBufferZone=me.querySelector("input[leadingBufferZone]")
+  me.trailingBufferZone=me.querySelector("input[trailingBufferZone]")
+
+  // me.querySelector("div[name]").innerHTML = me.name
+  // me.querySelector("div[summary]").innerHTML = me.summary
+}
+
+export function initializeAbout(me) {
+  me.gridToTest = null
+  if (me.formstate == undefined) {
+    me.formstate = 'hide'
+  }
+  var color
+  var background
+  var buttonstate = 'show'
+  background="lightgray";
+  color="black";
+  console.log('about')
+  //me.innerHTML = `<z-header color="${color}" background="${background}" formstate="${me.formstate}" buttonstate="${buttonstate}"></z-header>`;
+  me.innerHTML = `<z-headerabout color="${color}" background="${background}" buttonstate="${buttonstate}"></z-headerabout>`;
   me.parent = me.querySelector("div[parent]")
   me.starttime = null
   me.endtime = null
