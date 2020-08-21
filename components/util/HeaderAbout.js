@@ -71,7 +71,7 @@ class HeaderAboutComponent extends HTMLElement {
 
     <div class="root" style="font-size:14px;border-left:0px solid gray;border-right:0px solid gray;background:${background};color:blue;width:100%;height:100%;">
       <div class="top" style="height:50px;display:flex;justify-content:space-between;">
-      <div style="color:white;margin: 10px 10px 1px 1px;" id="name">About</div>
+      <div style="font-size:18px;line-height:1.1;display:inline-block;color:white;margin: 0px 10px 1px 1px;" id="name"><b>About</b></div>
       </div>
       <div style="overflow:auto;height:100%;background:white;margin:10px 10px 10px 10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
         <div style="padding:10px 10px 0 10px;color:black;font-size:18px;">

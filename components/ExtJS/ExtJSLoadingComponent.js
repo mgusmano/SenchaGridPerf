@@ -9,7 +9,8 @@ class ExtJSLoadingComponent extends HTMLElement {
     this.formstate = "hide";
     this.product = "ExtJS";
     this.testName = "load time";
-    this.name = "<b>Ext JS Initial Loading Time</b>"
+    //this.name = "<b>Ext JS Initial Loading Time</b>"
+    this.name = "<b>Load Time</b>"
     this.summary = `
 <div style="font-size:14px;">
 <b>This test measures the time required to load the initial set of static data.</b>

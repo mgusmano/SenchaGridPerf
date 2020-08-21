@@ -10,7 +10,8 @@ class ExtJSFilteringComponent extends HTMLElement {
     this.formstate = "hide";
     this.product = "ExtJS";
     this.testName = "server filter";
-    this.name = "<b>Ext JS Filtering Speed Test</b>";
+    //this.name = "<b>Ext JS Filtering Speed Test</b>";
+    this.name = "<b>Filtering Speed</b>";
     this.summary = `
 <div style="font-size:14px;">
 <b>This test measures the time required to dynamically filter on a field (e.g: characters in a name)</b>

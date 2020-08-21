@@ -19,7 +19,8 @@ class ExtJSScrollingComponent extends HTMLElement {
     this.formstate = "hide";
     this.product = "ExtJS";
     this.testName = "scroll";
-    this.name = "<b>Ext JS Buffered Grid Scrolling Test</b>";
+    //this.name = "<b>Ext JS Buffered Grid Scrolling Test</b>";
+    this.name = "<b>Scrolling</b>";
     this.summary = `
 <div style="font-size:14px;">
 <b>This test measures the time required to scroll through various portions of the grid.</b>

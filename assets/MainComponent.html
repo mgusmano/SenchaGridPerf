@@ -1,18 +1,12 @@
 <ext-panel viewport="true" layout="fit" bodyStyle='{"border":"0px solid red"}' onready="main.viewportReady">
 
-
-
-
-
-
-
   <ext-container dock="top" layout="hbox" height="100" style='{"border":"0px solid white","color": "white","background": "#094158"}'>
-    <ext-container style='{"font-style": "none", "color": "gray", "font-size": "34px","font-weight": "700","margin": "37px 10px 10px 0","background": "#094158"}' html="Grid Performance Analyzer"></ext-container>
+    <ext-container style='{"line-height": "1.2", "display": "inline-block", "font-style": "none", "color": "gray", "font-size": "34px","font-weight": "700","margin": "27px 10px 10px 0","background": "#094158"}' html="Grid Performance Analyzer"></ext-container>
     <ext-image alt='logo' src='assets/sencha.png' height='100' width='200'></ext-image>
   </ext-container>
 
-  <ext-container dock="top" layout="hbox" height="50" style='{"border":"0px solid white","color": "blue","background": "white"}'>
-  <div style="font-size:18px;padding:15px 10px 10px 10px;color:rgb(13,66,87)"><b>Welcome!</b> This is the Ext JS Grid Performance Analyzer</div>
+  <ext-container dock="top" layout="hbox" height="60" style='{"border":"0px solid white","color": "blue","background": "white"}'>
+  <div style="font-size:18px;padding:15px 10px 5px 10px;color:rgb(13,66,87)"><b>Welcome!</b> This is the Ext JS Grid Performance Analyzer</div>
   </ext-container>
 
   <ext-panel
@@ -24,6 +18,7 @@
     border="false"
     scrollable="y"
     resizable='{"edges": "east", "dynamic": "true"}'
+    minWidth="300"
     width="400"
   >
     <ext-container dock="top" height="50" layout="fit" style='{"display":"flex","padding": "0 0 0 0","color": "white","background": "#094158"}'>
@@ -42,6 +37,7 @@
       extname="treelist"
       onselectionchange="main.navTreelistSelectionChange"
       ui="nav"
+      scrollable="y"
       expanderFirst="false"
       expanderOnly="false"
     >
@@ -49,7 +45,7 @@
     <ext-container dock="bottom" height="200" layout="fit" style='{"display":"flex","padding": "0 0 0 0","color": "white","background": "#094158"}'
 html = '
 <div style="font-size:18px;padding:10px;">
-      <b>Ext JS Grid is over 300x faster than other market vendors.</b>
+    <div style="line-height:1.2;display:inline-block;">  <b>Ext JS Grid is over 300x faster than other market vendors.</b></div>
       <br/><br/>
       Check out the comparison results on our blog:
       <br/><br/>
