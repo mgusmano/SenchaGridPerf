@@ -78,22 +78,19 @@ class HeaderAboutComponent extends HTMLElement {
           <div style="color:rgb(13,66,87)" id="summary"><b>Welcome to the Ext JS Grid Performance Analyzer!</b></div>
         </div>
         <div parent style="padding:0 10px 10px 10px;width:100%;height:500px;color:rgb(9, 65, 88);font-size:18px;" class="ag-theme-balham">
-
-
-<p>
-<div style="font-size:18px;">
-        This User Interface enables you to evaluate the Ext JS Grid performance on various benchmarking metrics.
-        <ul>
-        <li style="margin-bottom:10px;"><b>Step 1:</b>  Choose the desired test located on the left nav bar.
-        <li style="margin-bottom:10px;"><b>Step 2:</b>  Select the Grid Size from the drop down menu to run the benchmark evaluation (options range from 5,000 to 1 million entries)
-        <li style="margin-bottom:10px;"><b>Step 3:</b>  You can tune different parameters such as pageSize, leading/trailing Buffers, number of test runs etc.
-        <li style="margin-bottom:10px;"><b>Step 4:</b>  Execute the desired test (single run or multiple runs) and observe the results on the top right screen. You can also export the results to a file by clicking on the "export" button or "clear" the results and re-run.
-        </ul>
-</div>
-
-<div style="display:flex;align-items: center;justify-content: center;">
-<img src="assets/ext.png" alt="" width="40%" xheight="600">
-</div>
+          <p>
+          <div style="font-size:18px;">
+            This User Interface enables you to evaluate the Ext JS Grid performance on various benchmarking metrics.
+            <ul>
+            <li style="margin-bottom:10px;"><b>Step 1:</b>  Choose the desired test located on the left nav bar.
+            <li style="margin-bottom:10px;"><b>Step 2:</b>  Select the Grid Size from the drop down menu to run the benchmark evaluation (options range from 5,000 to 1 million entries)
+            <li style="margin-bottom:10px;"><b>Step 3:</b>  You can tune different parameters such as pageSize, leading/trailing Buffers, number of test runs etc.
+            <li style="margin-bottom:10px;"><b>Step 4:</b>  Execute the desired test (single run or multiple runs) and observe the results on the top right screen. You can also export the results to a file by clicking on the "export" button or "clear" the results and re-run.
+            </ul>
+          </div>
+          <div style="display:flex;align-items: center;justify-content: center;">
+            <a target="_blank" href="https://www.sencha.com/products/extjs/"><img src="assets/ext.png" alt="" width="40%" xheight="600"></a>
+          </div>
 
         </div>
       </div>

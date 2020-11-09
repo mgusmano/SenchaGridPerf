@@ -198,22 +198,26 @@ There 2 buttons below to run tests:
 
         doFilter10X: function (me) {
 
-          window.grid.getStore().removeAll();
-          window.grid.getStore().sync();
-          window.total = 0
-
+          console.log(me)
           var filternum10 = 0
-          function callFilter10x() {
+          function callFilter10x(me) {
+            //debugger
+            //var me = this;
             setTimeout(function(){
 
-              me.toggleFilter(true);
-              //me.runGridTest()
+              //me.toggleFilter(true);
+
+              //me.clearGridRefs(); //mjg
+              //var me = this
+              //me.runGridTest() //mjg
+
               filternum10++
               if (filternum10 < 9 ) {
-                callFilter10x()
+                callFilter10x(me)
               }
               else {
                 var avg = window.total/filternum10
+                console.log(me)
                 var d = {
                   "run":"Average<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test result",
                   "milliseconds":avg.toFixed(2),
@@ -227,9 +231,8 @@ There 2 buttons below to run tests:
               }
             }, 1000);
           }
-          //this.clearGridRefs();
-          var me = this
-          //me.runGridTest()
+          //me.clearGridRefs(); //mjg
+          //me.runGridTest() //mjg
           callFilter10x(me)
           //this.toggleFilter(true);
         },

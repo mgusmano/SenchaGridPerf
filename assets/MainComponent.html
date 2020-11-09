@@ -3,11 +3,17 @@
   <ext-container dock="top" layout="hbox" height="100" style='{"border":"0px solid white","color": "white","background": "#094158"}'>
     <ext-container style='{"line-height": "1.2", "display": "inline-block", "font-style": "none", "color": "gray", "font-size": "34px","font-weight": "700","margin": "27px 10px 10px 0","background": "#094158"}' html="Grid Performance Analyzer"></ext-container>
     <ext-image alt='logo' src='assets/sencha.png' height='100' width='200'></ext-image>
+
   </ext-container>
 
-  <ext-container dock="top" layout="hbox" height="60" style='{"border":"0px solid white","color": "blue","background": "white"}'>
-  <div style="font-size:18px;padding:15px 10px 5px 10px;color:rgb(13,66,87)"><b>Welcome!</b> This is the Ext JS Grid Performance Analyzer</div>
-  </ext-container>
+  <ext-container dock="top" layout="fit" height="60" style='{"border":"0px solid white","color": "blue","background": "white"}'>
+<div style="width:100%;display:flex;flex-direction:row;justify-content: space-between">
+    <div style="font-size:18px;padding:15px 10px 5px 10px;color:rgb(13,66,87)"><b>Welcome!</b> This is the Ext JS Grid Performance Analyzer
+</div>
+  <button style="margin-top:10px;width:100px;height:35px;font-size:14px;xbackground:#2196f3;color:black;border: none;" class="x-fa fa-question ${buttonstate}" help>&nbsp;help</button>
+  </div>
+
+</ext-container>
 
   <ext-panel
     extname="leftpanel"
@@ -80,9 +86,9 @@ html = '
         <div class="start">
           <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-file-export ${buttonstate}" export>&nbsp;export</button>
           <button style="width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-trash-alt ${buttonstate}" clear>&nbsp;clear</button>
-
+<!--
           <button style="margin-left:30px;width:100px;height:35px;font-size:14px;background:#2196f3;color:white;" class="x-fa fa-question ${buttonstate}" help>&nbsp;help</button>
-
+-->
 
         </div>
       </div>

@@ -1,10 +1,12 @@
 Sencha Grid Performance
 
-to build:
+The production build is in the dist folder
+Copy this folder to your production web server
+the index.html file in this folder is home page
 
+to build the production dist folder:
+
+from the root:
 npm install
 npm start
 
-then, to run:
-
-copy dist folder to web server
