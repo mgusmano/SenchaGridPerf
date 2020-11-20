@@ -197,8 +197,6 @@ There 2 buttons below to run tests:
         },
 
         doFilter10X: function (me) {
-
-          console.log(me)
           var filternum10 = 0
           function callFilter10x(me) {
             //debugger
@@ -217,7 +215,6 @@ There 2 buttons below to run tests:
               }
               else {
                 var avg = window.total/filternum10
-                console.log(me)
                 var d = {
                   "run":"Average<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test result",
                   "milliseconds":avg.toFixed(2),

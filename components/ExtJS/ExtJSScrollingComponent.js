@@ -195,6 +195,7 @@ There 3 buttons below to run tests:
             // },
             {
               xtype: 'button',
+              id: 'scroll1x',
               text: 'Run Test 1x',
               style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
               handler: 'onStartTestBtnClick',
@@ -204,6 +205,7 @@ There 3 buttons below to run tests:
             },
             {
               xtype: 'button',
+              id: 'scroll10x',
               text: 'Run Test 10x',
               style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
               handler: 'doFilter10X',
@@ -213,9 +215,18 @@ There 3 buttons below to run tests:
             },
             {
               xtype: 'button',
+              id: 'scrollend',
               text: 'Scroll to End',
               style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
               handler: 'onScrollToEndBtnClick'
+            },
+            {
+              xtype: 'button',
+              id: 'scrolltop',
+              disabled: true,
+              text: 'Start New Test',
+              style: "width:175px;height:35px;font-size:14px;background:#2196f3;",
+              handler: 'onScrollToTopBtnClick'
             }
             // {
             //   xtype: 'button',
@@ -259,12 +270,37 @@ There 3 buttons below to run tests:
           var lastPage = this.getViewModel().get('totalPages'),
             newScrollTop = this.getNewScrollTop(lastPage);
 
+          Ext.getCmp('scroll1x').setDisabled(true)
+          Ext.getCmp('scroll10x').setDisabled(true)
+          Ext.getCmp('scrollend').setDisabled(true)
+          Ext.getCmp('scrolltop').setDisabled(false)
+
           this.startTimer();
           this.iteration = 'pageUp';
           this.itemsAdded = false;
           this.scrollEnded = false;
           this.scrollToEndFunctionality = true;
           this.getScrollable().scrollTo(0, newScrollTop);
+        },
+
+        onScrollToTopBtnClick: function() {
+          //var lastPage = this.getViewModel().get('totalPages');
+          //var newScrollTop = this.getNewScrollTop(lastPage);
+          var newScrollTop = 0;
+
+
+          // this.startTimer();
+          // this.iteration = 'pageUp';
+          // this.itemsAdded = false;
+          // this.scrollEnded = false;
+          // this.scrollToEndFunctionality = true;
+          this.getScrollable().scrollTo(0, newScrollTop);
+
+          Ext.getCmp('scroll1x').setDisabled(false)
+          Ext.getCmp('scroll10x').setDisabled(false)
+          Ext.getCmp('scrollend').setDisabled(false)
+          Ext.getCmp('scrolltop').setDisabled(true)
+
         },
 
         getScrollable: function () {
@@ -311,6 +347,7 @@ There 3 buttons below to run tests:
               };
 
             sendIt(me.product, testName, testJson, milliseconds);
+
           }
         },
         onGridAfterRender: function () {
@@ -367,11 +404,17 @@ There 3 buttons below to run tests:
         },
 
         doFilter10X: function (me) {
+
+          Ext.getCmp('scroll1x').setDisabled(true)
+          Ext.getCmp('scroll10x').setDisabled(true)
+          Ext.getCmp('scrollend').setDisabled(true)
+          Ext.getCmp('scrolltop').setDisabled(true)
+
           console.log(me)
           var scrollnum10 = 0
           function callScroll10x() {
             setTimeout(function(){
-              me.onStartTestBtnClick()
+              me.onStartTestBtnClick(false)
               scrollnum10++
               if (scrollnum10 < 9 ) {
                 callScroll10x()
@@ -388,27 +431,36 @@ There 3 buttons below to run tests:
                   "children": window.children
                 }
                 window.treepanel.getStore().add(d)
+                Ext.getCmp('scrolltop').setDisabled(false)
               }
             }, 1000);
           }
           var me = this
-          me.onStartTestBtnClick()
+          me.onStartTestBtnClick(false)
           callScroll10x()
         },
 
-        onStartTestBtnClick: function () {
+        onStartTestBtnClick: function (disable) {
           var pageDownField = this.lookupReference('pageDownField'),
             pageUpField = this.lookupReference('pageUpField');
 
+            if (disable != false) {
+              Ext.getCmp('scroll1x').setDisabled(true)
+              Ext.getCmp('scroll10x').setDisabled(true)
+              Ext.getCmp('scrollend').setDisabled(true)
+              Ext.getCmp('scrolltop').setDisabled(false)
+            }
+
           if (pageDownField.isValid() && pageUpField.isValid()) {
             this.iteration = 'pageDown';
-
             this.startTimer();
             this.loadPage();
           } else {
             Ext.toast('Please enter the pages numbers in range');
           }
         },
+
+
         adjustViewScrolling: function (newScrollTop) {
           var view = this.getView().getView();
 

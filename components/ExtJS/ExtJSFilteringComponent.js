@@ -280,7 +280,7 @@ There 2 buttons below to run tests:
       }
     });
 
-    me.gridToTest = Ext.create({ xtype: `${me.testName}`, renderTo: me.parent });
+    me.gridToTest = Ext.create({ xtype: `${me.testName}`, width:'100%', renderTo: me.parent });
   }
   disconnectedCallback() {
     this.clearGridRefs();

@@ -39,7 +39,6 @@ export function initializeAbout(me) {
   var buttonstate = 'show'
   background="lightgray";
   color="black";
-  console.log('about')
   //me.innerHTML = `<z-header color="${color}" background="${background}" formstate="${me.formstate}" buttonstate="${buttonstate}"></z-header>`;
   me.innerHTML = `<z-headerabout color="${color}" background="${background}" buttonstate="${buttonstate}"></z-headerabout>`;
   me.parent = me.querySelector("div[parent]")

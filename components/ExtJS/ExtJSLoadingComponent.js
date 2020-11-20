@@ -160,7 +160,6 @@ There 2 buttons below to run tests:
           },
           controller: {
             init: function() {
-              //console.log('here')
               var store = this.getView().getStore();
 
               store.load({
@@ -171,7 +170,6 @@ There 2 buttons below to run tests:
               })
             },
             doLoading: function () {
-              console.log('here')
               me.clearGridRefs();
               me.runGridTest()
               //this.toggleFilter(true);
