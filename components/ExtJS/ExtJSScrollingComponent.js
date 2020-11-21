@@ -81,6 +81,7 @@ There 3 buttons below to run tests:
 
 
   runGridTest() {
+    this.clearGridRefs()
     var me = this;
     let pageSize = parseInt(document.getElementById("pageSize").value, 10);
     let leadingBufferZone = parseInt(document.getElementById("leadingBufferZone").value, 10);
@@ -294,12 +295,18 @@ There 3 buttons below to run tests:
           // this.itemsAdded = false;
           // this.scrollEnded = false;
           // this.scrollToEndFunctionality = true;
+
+          console.log(this)
+
           this.getScrollable().scrollTo(0, newScrollTop);
 
           Ext.getCmp('scroll1x').setDisabled(false)
           Ext.getCmp('scroll10x').setDisabled(false)
           Ext.getCmp('scrollend').setDisabled(false)
           Ext.getCmp('scrolltop').setDisabled(true)
+
+          //this.clearGridRefs();
+          this.runGridTest()
 
         },
 

@@ -72,7 +72,7 @@ class HeaderComponent extends HTMLElement {
     <div class="root" style="border-left:0px solid gray;border-right:0px solid gray;background:${background};color:blue;width:100%;height:100%;">
       <div class="top" style="height:50px;display:flex;justify-content:space-between;">
       <div style="font-size:18px;line-height:1.1;display:inline-block;color:white;margin: 0px 10px 1px 1px;" id="name"></div>
-        <select tableSize style="color:white;background:#2196f3;font-size:14px;xmargin: 10px 10px 1px 1px;height:33px;xpadding: 5px 5px;">
+        <select id="theTableSize" tableSize style="color:white;background:#2196f3;font-size:14px;xmargin: 10px 10px 1px 1px;height:33px;xpadding: 5px 5px;">
           <option value="mega_5000">Grid size: 5000</option>
           <option value="mega_10000">Grid size: 10,000</option>
           <option value="mega_100000">Grid size: 100,000</option>
@@ -96,6 +96,32 @@ class HeaderComponent extends HTMLElement {
     <div>
     `;
     this.innerHTML = this.template;
+
+    const tb = document.getElementById('theTableSize')
+    if (tb == null) { return }
+    if (window.selectedIndex != undefined) {
+      tb.selectedIndex = window.selectedIndex
+    }
+
+    tb.addEventListener('change', function(event) {
+      window.tableName = event.target.value;
+      window.tableSize = parseInt(event.target.value.split('_')[1], 10);
+
+      var index = this.selectedIndex;
+      window.selectedIndex = index
+
+      var current = window.treelist.getSelection();
+      window.treelist.setSelection(window.treelist.getStore().getRoot().firstChild);
+      window.treelist.setSelection(current);
+    })
+
+  //   const tb = document.getElementById('theTableSize')
+  //   console.log(tb)
+  //   console.log(tb.options.length)
+  //   tb.addEventListener('change', function() {
+  //     console.log('selected')
+  //     console.log(Ext.getCmp("theMenu"))
+  //   });
   }
 }
 customElements.define("z-header", HeaderComponent);

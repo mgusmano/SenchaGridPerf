@@ -36,8 +36,8 @@ There 2 buttons below to run tests:
     document.getElementById("name").innerHTML = this.name;
     document.getElementById("summary").innerHTML = this.summary;
     document.querySelector('select[tableSize]').addEventListener('change', (event) => {
-      window.tableName = event.target.value;
-      window.tableSize = parseInt(event.target.value.split('_')[1], 10);
+      // window.tableName = event.target.value;
+      // window.tableSize = parseInt(event.target.value.split('_')[1], 10);
     });
     createBufferViewExtJS(this.parent);
     this.runGridTest();

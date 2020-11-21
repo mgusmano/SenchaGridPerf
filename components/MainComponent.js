@@ -30,6 +30,7 @@ export default class MainComponent {
     //   event.detail.cmpObj['leftpanel'].setHidden(true)
     // }
 
+    window.treelist = event.detail.cmpObj['treelist']
     window.treepanel = event.detail.cmpObj['treepanel']
     window.grid = event.detail.cmpObj['grid']
 
@@ -68,10 +69,6 @@ export default class MainComponent {
     if (hash == '') { hash = 'all'; }
     var node = this.treelist.getStore().findNode('path', '/' + hash);
     this.treelist.setSelection(node);
-
-
-
-
 
     var content = `
     <span id="thespan" class="close">&times;</span>
